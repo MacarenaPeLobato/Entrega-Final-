@@ -7,7 +7,7 @@ class Producto (models.Model):
     precio=models.IntegerField()
     
     def __str__(self):
-        return self.nombreprod + " " + self.caracteristicas + " " + self.precio
+        return self.nombreprod + " " + self.caracteristicas + " " + str(self.precio)
 
 
 class Cliente (models.Model):
@@ -16,7 +16,7 @@ class Cliente (models.Model):
     correo=models.EmailField()
 
     def __str__(self):
-        return self.nombre + " " + self.numerocel + " " + self.correo
+        return self.nombre + " " + str(self.numerocel) + " " + self.correo
 
 
 class Proveedores(models.Model):
@@ -25,7 +25,7 @@ class Proveedores(models.Model):
     precio=models.IntegerField()
 
     def __str__(self):
-        return self.nombreproveedor + " " + self.productoproveedor + " " + self.precio
+        return self.nombreproveedor + " " + self.productoproveedor + " " + str(self.precio)
 
         
 
