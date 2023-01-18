@@ -4,21 +4,23 @@
 
 {% block contenido00 %}
 
-<h5 class="mb-10"> Resultados de la busqueda de precios:</h5>
+<h5 class="mb-6"> Resultados de su busqueda de productos por nombre:</h5>
 
-{% if precio %}
+{% if productos %}
 
-<h2>Listado de precios:</h2>
+<hr> <h2>Lista de productos solicitados por clientes:</h2></hr>
 
-{% for precios in precio%}
-{{producto.precio}}
+{% for producto in productos %}
+<li>{{producto.nombreprod}} </li>
 
-{% endfor%}
+{% endfor%} 
 
 {% else %}
 
-<h2> NO HAY PRECIOS </h2>
+<h2> NO HAY PRODUCTOS CON ESE NOMBRE. INTENTE DE NUEVO POR FAVOR </h2>
 
 {% endif%}
+
+<u><hr> <h2 class="text-light mx-auto mt-5 mb-6"> Visita nuestras siguientes secciones: </h2> </hr></u>
 
 {% endblock %}

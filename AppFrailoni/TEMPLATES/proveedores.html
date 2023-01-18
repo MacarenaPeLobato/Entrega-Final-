@@ -3,25 +3,29 @@
 
 
 {% block contenido00 %}
-    <h2 class="mx-auto my-5 text-uppercase"> SECCIÓN PROVEEDORES</h2>
-    <h4 class="text-white-50 mx-auto mt-2 mb-5"> Si querés sumarte como nuestro proveedor, por favor dejanos un mensaje.</h4>
+    <u><h2 class="mx-auto my-5 text-uppercase"> ¡Bienvenidos a la sección exlusica de nuestros PROVEEDORES!</h2></u>
+    <h6 class="text-white-50 mx-auto mt-4 mb-5"> Si querés sumarte como nuestro proveedor, deslizate hacia abajo y completa el formulario...    </h6>
+    <u><br> <h2 class="text-light mx-auto mt-6 mb-6"> Visita nuestras siguientes secciones: </h2> </br></u>
                                                 
 {% endblock %} 
 
 {% block contenido%}
-<h2 class="text-white mb-4">NUESTROS PROVEEDORES</h2>
+    <h2 class="text-white mb-1">NUESTROS PROVEEDORES:</h2>
     <p class="text-white-50">
-       Productos elaborados con 100% de recursos biodegradables, extraidos de manera responsable.
-        <h2> ¡Al cuidado de nuestro medioambiente! </h2> 
+       Empresas que fabrican nuestros insumos con productos elaborados con 100% de recursos biodegradables, extraidos de manera responsable.
+        <u><h2> ¡Al cuidado de nuestro medioambiente! </h2> </u>
         
     </p>
-
+    <h5> Complete el formulario y nosotros nos encargamos de lo demás... </h5> 
+    <hr>
     <h2 class="text-white mb-4"> <form action="{% url 'proveedores' %}" method="POST"> {% csrf_token %}</h2>
         <table>
             {{ form.as_table}}
         </table>
-    <input type="submit" value="Enviar información" 
+    <input type="submit" value="Enviar " >
+    </hr>
+    
+    <hr><strong> <h5> {{ mensaje }} </h5> </strong></hr>
 
-{{ mensaje }}
 
 {% endblock %}

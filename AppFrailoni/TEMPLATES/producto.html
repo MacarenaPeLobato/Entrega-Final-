@@ -4,23 +4,105 @@
 
 
 {% block contenido00 %}
-    <h2 class="mx-auto my-5 text-uppercase"> SECCIÓN PRODUCTOS</h2>
-    <h4 class="text-white-50 mx-auto mt-2 mb-5"> Te mostramos algunos de nuestros diseños, confeccionados artesalmente.</h4>
-                                                
+    <u><h2 class="mx-auto my-5 text-uppercase"> ¡Bienvenidos a la sección exlusica de nuestros PRODUCTOS!</h2></u>
+    <h5 class="text-white-50 mx-auto mt-2 mb-5"> Desliza hacia abajo para visualizar algunos de nuestros diseños, confeccionados artesalmente.</h5>
+                                       
 {% endblock %} 
-{% block contenido%}
-<h2 class="text-white mb-4">NUESTROS PRODUCTOS</h2>
-    <p class="text-white-50">
-       Diseñados exclusivamente a pedido de nuestros clientes
-       <h2> Calidad y excelencia </h2> 
-        Les aseguramos diseños únicos.
-        Por favor, complete el siguiente formulario:
-    </p>
-    <h2 class="text-white mb-4"> <form action="{% url 'producto' %}" method="POST"> {% csrf_token %}</h2>
-        <table>
-            {{ form.as_table}}
-        </table>
-    <input type="submit" value="Enviar información sobre producto"
 
-{{ mensaje1 }}  
+
+{% block contenido%}
+
+
+<u><h2 class="text-white mb-4">NUESTROS PRODUCTOS:</h2></u>
+    <p class="text-white-50">
+       Algunos de los productos realizados en el último tiempo, exclusivamente a pedido de nuestros clientes...
+
+       <u><h2> Calidad y excelencia </h2> </u>
+        Les aseguramos diseños únicos.
+        
+    </p>
+
+    
+<div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+    <div class="col-lg-6"><img class="img-fluid" src='{% static "assets/img/sillas4.png" %}' alt="..." /></div>
+    <div class="col-lg-6">
+        <div class="text-center h-100 project">
+            <div class="d-flex h-100">
+                <div class="project-text w-100 my-auto text-center text-lg-left">
+                        <u><h4 class="text-white-50">Silla Hapalca</h4></u>
+                        <em><p class="mb-0 text-white-50"> El objetivo de esta silla era convertir un mueble cotidiano en una obra de arte única. <br> Sus partes se construyen mediante un proceso llamado laminación apilada. <br> Fue conformado por trece tablas, todas recicladas para garantizar la continuidad del medio ambiente. Se tallan con herramientas eléctricas, luego se pegan y se tallan a mano para refinar las formas fluidas.</p></em>
+                        <r class="d-none d-lg-block mb-5 ms-0" />
+                </div>
+            </div>
+        </div>        
+    </div>         
+</div>
+<em><p class="text-white-50"> FRAILONI DESIGN</p></em>
+<br>
+
+<div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+    <div class="col-lg-6"><img class="img-fluid" src='{% static "assets/img/mesa.png" %}' alt="..." /></div>
+    <div class="col-lg-6">
+        <div class=" text-center h-100 project">
+            <div class="d-flex h-100">
+                <div class="project-text w-100 my-auto text-center text-lg-left">
+                        <u><h4 class="text-white-50">MESA HOJA DE COBRE</h4></u>
+                        <em><p class="mb-0 text-white-50"> Un lugar para inspirarse.</p>
+                        <p class="mb-0 text-white-50">Esta mesa de hoja de cobre ha sido diseñado para contar la historia de los clientes. Una historia de cambio, una transición de lo viejo a lo nuevo. <br> La textura de los rieles se talló a mano y luego se unió a patas de forma suave, lo que proporciona una diferencia de textura que no solo es atractiva a la vista sino también al tacto. <br> Las patas han sido diseñadas como patas pasantes, terminando al ras con la parte superior de la mesa, dejando al descubierto la veta del extremo aserrado en cuartos del Fresno victoriano. </p></em>
+                        <r class="d-none d-lg-block mb-5 ms-0" />
+                </div>
+            </div>
+        </div>        
+    </div>         
+</div>
+<em><p class="text-white-50"> FRAILONI DESIGN</p></em>
+<br>
+<div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+    <div class="col-lg-6"><img class="img-fluid" src='{% static "assets/img/mesa1.png" %}' alt="..." /></div>
+        <div class="col-lg-6">
+            <div class="text-center h-100 project">
+                <div class="d-flex h-100">
+                    <div class="project-text w-100 my-auto text-center text-lg-left">
+                        <u><h4 class="text-white-50">Mesa Libertad</h4></u>
+                        <em><p class="mb-0 text-white-50"> Esta mesa de camping de madera rústica trabajada fue diseñada para ofrecer una sensación de ligereza dentro de un pequeño mueble. <br>Creado en múltiples elementos, todos combinados para actuar como un tributo a la experiencia gastronómica, donde una pareja se reúne para disfrutar de una comida y la compañía de los demás.</p></em>
+                        <r class="d-none d-lg-block mb-0 ms-0" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+</div>
+<em><p class="text-white-50"> FRAILONI DESIGN</p></em>
+<br>
+<div class="row gx-0 mb-5 mb-lg-4 justify-content-center">
+    <div class="col-lg-6"><img class="img-fluid" src='{% static "assets/img/sillas.jpg" %}' alt="..." /></div>
+        <div class="col-lg-6">
+            <div class="text-center h-100 project">
+                <div class="d-flex h-100">
+                    <div class="project-text w-100 my-auto text-center text-lg-left">
+                        <u><h4 class="text-white-50">Silla Hometic</h4></u>
+                        <em><p class="mb-0 text-white-50"> Usando alamo blanco por su hermoso grano y color, esta silla de estar esculpida, se creó usando aproximadamente 8 piezas de madera, cuidadosamente seleccionadas y recicladas. <br> El diseño fue esculpido y acabado a mano en su forma única. El resultado final es un mueble impactante que los propietarios sienten que es una obra de arte para su sala de estar. <br> La belleza del alamo está a la vista desde todos los ángulos, libre del estorbo del hilo</p> </em>
+                        <r class="d-none d-lg-block mb-0 ms-0" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+<em><p class="text-white-50"> FRAILONI DESIGN</p></em>
+<p class="text-white-50"> Diseñados exclusivamente a pedido de nuestros clientes...
+    <h2> Calidad y excelencia </h2> 
+    <h6>Les aseguramos diseños únicos. Si usted está interesado en diseñar junto a nosotros, complete el siguiente formulario:</h6>
+</p>
+    <h2 class="text-white mb-0"><form action="{% url 'producto' %}" method="POST"> {% csrf_token %}</h2>
+                                    <table>
+                                        {{ form.as_table}}
+                                    </table>
+                                    <input type="submit" value="Enviar " >
+                                </form>
+    
+<hr><strong> <h5> {{ mensaje }} </h5> </strong></hr>
+<hr></hr>
 {% endblock %}

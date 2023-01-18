@@ -20,9 +20,9 @@ def producto(request):
             precio= infoprod["precio"]
             formuprod=Producto( nombreprod=nombreprod, caracteristicas=caracteristicas, precio=precio)
             formuprod.save()        
-            return render (request, "inicio.html", {"mensaje1": "Tu información sobre el producto ha sido enviada. A la brevedad nos comunicaremos y la tendremos en cuenta para diseñar tu producto."})
+            return render (request, "inicio.html", {"mensaje": "Tu información sobre el producto ha sido enviada. A la brevedad nos comunicaremos y la tendremos en cuenta para diseñar tu producto."})
         else :
-            return render (request, "producto.html", {"form": form, "mensaje1": "Información no valida. Completo erroneamente el fomulario de PRODUCTO"})
+            return render (request, "producto.html", {"form": form, "mensaje": "Información no valida. Completo erroneamente el fomulario de PRODUCTO"})
     else:
         infoprod1= ProductoForms()
         return render (request, "producto.html", {"form": infoprod1 })
@@ -38,9 +38,9 @@ def proveedores(request):
             precio= info4["precio"]
             formuproveedor= Proveedores( nombreproveedor=nombreproveedor, productoproveedor=productoproveedor, precio=precio)
             formuproveedor.save()        
-            return render (request, "inicio.html", {"mensaje3": "Tu información ha sido enviada. A la brevedad, nos contactaremos para que seas nuestro futuro proveedor si cumples con nuestras condiciones..."})
+            return render (request, "inicio.html", {"mensaje": "Tu información ha sido enviada. A la brevedad, nos contactaremos. ¡¡Muchas gracias!!"})
         else :
-            return render (request, "proveedores.html", {"form": form, "mensaje3": "Información no valida. Completo erroneamente el fomulario de PROVEEDORES"})
+            return render (request, "proveedores.html", {"form": form, "mensaje": "Información no valida. Completo erroneamente el fomulario de PROVEEDORES"})
     else:
         info3= ProveedoresForms()
         return render (request, "proveedores.html", {"form": info3 })
@@ -74,12 +74,45 @@ def busquedadedatos(request):
 
 def busqueda(request):
 
-    precio= request.GET["precio"]
-    if precio != "":
-        precios=Producto.objects.filter(precio=precio)
-        return render (request, "resultado.html", {"precios":precios})
+    nombreprod= request.GET["nombreprod"]
+    if nombreprod != "":
+        productos=Producto.objects.filter(nombreprod= nombreprod)
+        return render (request, "resultado.html", {"productos": productos})
         
     else:
      return render (request, "busquedadedatos.html", {"mensaje": "Datos incorrecto"})
 
+
+
+
+
+
+
+def leerclientes (request):
+    clientes=Cliente.objects.all()
+    return render (request, "clientemod.html", {"clientes": clientes})
+
+def eliminarclientes (request, id): 
+    cliente=Cliente.objects.get(id=id)
+    cliente.delete()
+    clientes=Cliente.objects.all()
+    return render (request, "cliente.html", {"clientes": clientes , "mensaje": "Usted ha seleccionado la opción  de ELIMINAR. Su elección fue ejecutada con éxito"})
+
+
+def editarcliente(request, id):
+    cliente=Cliente.objects.get(id=id)
+    if request.method== "POST":
+        form=ClienteForms (request.POST)
+        if form.is_valid():
+            info= form.cleaned_data
+            cliente.nombre= info["nombre"]
+            cliente.correo= info["correo"]
+            cliente.numerocel= info["numerocel"]
+            cliente.save()
+            clientes=Cliente.objects.all()        
+            return render (request, "cliente.html", {"clientes": clientes , "mensaje": "Tu información ha sido modificada."})
+        pass
+    else:
+        formulario= ClienteForms(initial={"nombre": cliente.nombre , "correo": cliente.correo , "numerocel":cliente.numerocel})
+        return render ( request, "editarcliente.html", {"form": formulario, "cliente": cliente })
 

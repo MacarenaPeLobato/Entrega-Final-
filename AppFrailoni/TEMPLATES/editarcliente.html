@@ -1,0 +1,27 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block contenido00 %}
+
+
+<hr><strong> <h5> {{ mensaje }} </h5> </strong></hr>
+<hr></hr>
+
+<p><h2 class="text-white mt-6  mb-6"><form action="{% url 'editarcliente' cliente.id %}" method="POST"> {% csrf_token %} </h2>
+
+                                    <table>
+
+                                        {{ form.as_table }}
+        
+                                    </table>
+
+                                    <input type="submit" value="Guardar Datos">
+
+                                    </form> 
+</p>
+                    
+<u><hr> <h2 class="text-light mx-auto mt-6 mb-6"> Visita nuestras siguientes secciones: </h2> </hr></u>
+
+
+    
+{% endblock %}

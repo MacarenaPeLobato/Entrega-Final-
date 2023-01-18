@@ -1,0 +1,25 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block contenido00 %}
+
+<hr><strong> <h5> {{ mensaje }} </h5> </strong></hr>
+<hr></hr>
+
+<ul>
+<body>
+    <h4 class="text-white-50 mx-auto mt-5 mb-5"> Lista de posibles clientes que enviaron su formulario... </h4>
+    {% for cliente in clientes %}
+    <li> {{cliente.nombre}} - {{cliente.correo}} - {{cliente.numerocel}}  </li>
+    <a class="btn btn-outline-light" href='{% url "eliminarclientes" cliente.id %}' > ELIMINAR  </a>
+    <a class="btn btn-outline-light" href= '{% url "editarcliente" cliente.id %}' > EDITAR </a>
+    {% endfor %}
+</body>
+
+</ul>
+
+<br> <h2 class="text-light mx-auto mt-6 mb-6"> Visita nuestras siguientes secciones: </h2> </br>
+
+
+    
+{% endblock %}

@@ -5,22 +5,36 @@
 
 
 {% block contenido00 %}
-    <h2 class="mx-auto my-5 text-uppercase"> SECCIÓN CLIENTES</h2>
-    <h4 class="text-white-50 mx-auto mt-2 mb-5"> Productos únicos solicitados por nuestros clientes </h4>
+
+<hr><strong> <h5> {{ mensaje }} </h5> </strong></hr>
+<hr></hr>
+
+<u><h2 class="mx-auto my-5 text-uppercase"> ¡Bienvenidos a la sección exlusica para nuestros CLIENTES!</h2></u>
+<h5 class="text-white-50 mx-auto mt-2 mb-5"> Desliza hacia abajo para completar nuestro formulario...</h5>
 
 {% endblock %}
 
 
 {% block contenido%}
-<h2 class="text-white mb-4">NUESTROS CLIENTES</h2>
-    <p class="text-white-50"> Diseñados exclusivamente a pedido de ustedes mismos</p>
-       <h2> Complete el formulario y nosotros nos encargamos de lo demás... </h2> 
-           
-       <h2 class="text-white mb-4"> <form action="{% url 'cliente' %}" method="POST"> {% csrf_token %}</h2>
-            <table>
-                {{ form.as_table}}
-            </table>
-        <input type="submit" value="Enviar información" 
+<h3 class="text-white mb-4">¡Calidad e Innovación asegurada!</h3>
+<p class="text-white-50"> Diseñamos junto a ustedes...</p>
+    
+<h5> ¡Complete el formulario y nosotros nos encargamos de lo demás! </h5> 
 
-{{ mensaje }}  
+<ul>
+    <h2 class="text-white mb-4"> <form action="{% url 'cliente' %}" method="POST"> {% csrf_token %}</h2>
+
+                                    <table>
+
+                                        {{ form.as_table }}
+                                    
+                                    </table>
+
+                                    <input type="submit" value="Enviar "> 
+
+</ul>
+<A HREF= '{% url "leerclientes" %}' > ¡Haz click para visualizar la lista de clientes que ha completado el formulario!  </A>
+
+
+
 {% endblock %}

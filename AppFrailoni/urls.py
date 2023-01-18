@@ -10,6 +10,10 @@ urlpatterns = [
     path("inicio/", inicio, name= "inicio"),
     path("busquedadedatos/", busquedadedatos, name= "busquedadedatos"),
     path("busqueda/", busqueda, name= "busqueda"),
+    path("leerclientes/", leerclientes, name= "leerclientes"),
+    path("eliminarclientes/<id>", eliminarclientes, name= "eliminarclientes"),
+    path("editarcliente/<id>", editarcliente, name= "editarcliente"),
+    
     
 
 

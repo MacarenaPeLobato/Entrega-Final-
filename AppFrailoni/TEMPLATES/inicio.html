@@ -2,28 +2,34 @@
 {% load static %}
 
 {% block contenido00 %}
-    <h1 class="mx-auto my-5 text-uppercase">Frailoni design</h1>
-    <h2 class="text-black-50 mx-auto mt-2 mb-5"> El diseño no es solo lo que se ve y se siente, el diseño es como funciona.</h2>
+
+    
+
+    <h1 class="mx-auto mt-5 text-uppercase">Frailoni design</h1>  
+
+    <u><b> <h5> {{ mensaje }} </h5> </b></u>
+        
+    <h2 class="text-light mx-auto mt-4 mb-5"> El diseño no es solo lo que se ve y se siente, el diseño es como funciona.</h2>
+    <u><br> <h2 class="text-light mx-auto mt-6 mb-6"> Visita nuestras siguientes secciones: </h2> </br></u>
+    
 {% endblock %}
 
 {% block contenido0 %}
     <ul class="navbar-nav ms-auto">                      
-        <li class="nav-item"><a class="nav-link" href="#projects">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Acerca de nosotros</a></li>
         <li class="nav-item"><a class="nav-link" href="#signup">Contacto</a></li>
     </ul>
 {% endblock %}
 
 {% block contenido%}
-<h2 class="text-black mb-4"> FRAILONI DESING</h2>
-    <p class="text-black-50">
-       Nos dedicamos a diseñar, cubrir tu necesidad, respetando y conservando al medioambiente, es por eso que usamos materiales reciclados.
-       <h2> Utilizamos productos biodegradables... </h2> 
+<u><h5 class="text-light mb-4"> Responsabilidad con el medio ambiente: </h5></u>
+    <p class="text-light mb-3">
+        
+       <h6> Utilizando una gama de maderas y chapas respetuosas con el medio ambiente, combinadas con herrajes y acabados de última generación. Federico trabaja en estrecha colaboración con sus clientes para crear muebles hechos a medida que sean tanto funcionales como estéticamente agradables... </h6> 
         
     </p>
 
-{{ mensaje }} 
-{{ mensaje1 }} 
-{{ mensaje3 }}  
+  
 
 {% endblock %}
 
@@ -49,7 +55,7 @@
                 <div class="bg-light text-center h-100 project">
                     <div class="d-flex h-100">
                         <div class="project-text w-100 my-auto text-center text-lg-left">
-                            <h4 class="text-black-50">Cálidad</h4>
+                            <h4 class="text-black-50">Calidad</h4>
                             <p class="mb-0 text-black-50">Elaboración de productos únicos, producidos con dedicación y esfuerzo. La marca se caracteriza por asegurar responsabilidad ambiental y duración de los productos con los cuidados recomendados de nuestro equipo.</p>
                             <hr class="d-none d-lg-block mb-0 ms-0" />
                         </div>

@@ -12,6 +12,6 @@ class ProductoForms(forms.Form):
     precio= forms.IntegerField(label="Ingrese su presupuesto máximo que pagaria por el producto:")
 
 class ProveedoresForms (forms.Form):
-    nombreproveedor= forms.CharField(label="Ingrese su nombre/marca: ", max_length=150)
+    nombreproveedor= forms.CharField(label="Ingrese su nombre/marca:", max_length=150)
     productoproveedor= forms.CharField(label="Ingrese el producto o materia prima que nos desea vender:", max_length=150)
     precio= forms.IntegerField(label="Ingrese el precio por kilo:")

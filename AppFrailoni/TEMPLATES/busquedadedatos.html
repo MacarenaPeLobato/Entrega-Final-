@@ -1,9 +1,26 @@
+{% extends "padre.html" %}
 {% load static %}
 
+
+
+
 {% block contenido00 %}
-<h2 class="text-white mb-4"> <form action= "{% url 'busqueda' %}" method="GET"> </h2>
-    <input type="number" name="precio" id="precio" placeholder="Inserte el precio:">
-    <input type="submit" value="Buscar Precio"
+
+
+<h2 class="mx-auto my-5 text-uppercase"> DESLIZA HACIA ABAJO PARA COMPLETAR EL CAMPO DE BUSQUEDA DE PRODUCTOS POR NOMBRE</h2>
+
+
+{% endblock %}
+
+{% block contenido %}
+<h4 class="text-white-50 mx-auto mt-2 mb-5"> Complete el campo para buscar el producto que desea visualizar: </h4>
+
+<form action= "{% url 'busqueda' %}" method="GET">
+    <input type="text" name="nombreprod" id="nombreprod" placeholder="Nombre del producto:">
+    <input type="submit" value="Buscar producto">
+
+</form>
+
 
 
 {% endblock %}
