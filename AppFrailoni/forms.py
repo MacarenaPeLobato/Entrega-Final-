@@ -1,5 +1,9 @@
 from django import forms
 
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+
+
 class ClienteForms(forms.Form):
     nombre= forms.CharField(label="Ingrese su nombre:", max_length=150)
     correo= forms.EmailField(label="Ingrese su correo:")
@@ -15,3 +19,20 @@ class ProveedoresForms (forms.Form):
     nombreproveedor= forms.CharField(label="Ingrese su nombre/marca:", max_length=150)
     productoproveedor= forms.CharField(label="Ingrese el producto o materia prima que nos desea vender:", max_length=150)
     precio= forms.IntegerField(label="Ingrese el precio por kilo:")
+
+
+
+
+
+
+
+
+class RegistroUsuarioform (UserCreationForm):
+    email:forms.EmailField(label="Email Cliente")
+    password1=forms.CharField(label="Contraseña", widget=forms.PasswordInput)
+    password2=forms.CharField(label="Confirmar su contraseña", widget=forms.PasswordInput)
+
+    class Meta: 
+        model=User
+        fields=["username", "email", "password1", "password2"]
+        help_texts={k:"" for k in fields}

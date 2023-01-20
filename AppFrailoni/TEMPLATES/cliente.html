@@ -7,10 +7,11 @@
 {% block contenido00 %}
 
 <hr><strong> <h5> {{ mensaje }} </h5> </strong></hr>
-<hr></hr>
+
 
 <u><h2 class="mx-auto my-5 text-uppercase"> ¡Bienvenidos a la sección exlusica para nuestros CLIENTES!</h2></u>
 <h5 class="text-white-50 mx-auto mt-2 mb-5"> Desliza hacia abajo para completar nuestro formulario...</h5>
+<u><br> <h2 class="text-light mx-auto mt-6 mb-6"> Visita nuestras siguientes secciones: </h2> </br></u>
 
 {% endblock %}
 
@@ -19,7 +20,7 @@
 <h3 class="text-white mb-4">¡Calidad e Innovación asegurada!</h3>
 <p class="text-white-50"> Diseñamos junto a ustedes...</p>
     
-<h5> ¡Complete el formulario y nosotros nos encargamos de lo demás! </h5> 
+<em><h5> ¡Complete el formulario y nosotros nos encargamos de lo demás! </h5> 
 
 <ul>
     <h2 class="text-white mb-4"> <form action="{% url 'cliente' %}" method="POST"> {% csrf_token %}</h2>
@@ -30,7 +31,7 @@
                                     
                                     </table>
 
-                                    <input type="submit" value="Enviar "> 
+                                    <input type="submit" value="Enviar "> </em>
 
 </ul>
 <A HREF= '{% url "leerclientes" %}' > ¡Haz click para visualizar la lista de clientes que ha completado el formulario!  </A>

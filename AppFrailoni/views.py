@@ -2,6 +2,12 @@ from django.shortcuts import render
 from .models import *
 from django.http import HttpResponse
 from AppFrailoni.forms import *
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin 
+
+
 
 
 # Create your views here.
@@ -9,7 +15,7 @@ from AppFrailoni.forms import *
 def inicio(request):
     return render (request, "inicio.html")
 
-
+@login_required
 def producto(request):
     if request.method== "POST":
         form=ProductoForms (request.POST)
@@ -27,7 +33,8 @@ def producto(request):
         infoprod1= ProductoForms()
         return render (request, "producto.html", {"form": infoprod1 })
     
-    
+
+@login_required   
 def proveedores(request):
     if request.method== "POST":
         form=ProveedoresForms (request.POST)
@@ -45,7 +52,8 @@ def proveedores(request):
         info3= ProveedoresForms()
         return render (request, "proveedores.html", {"form": info3 })
 
-    
+
+@login_required
 def cliente(request):
     if request.method== "POST":
         form=ClienteForms (request.POST)
@@ -67,11 +75,11 @@ def cliente(request):
 
 
 
-
+@login_required
 def busquedadedatos(request):
     return render (request, "busquedadedatos.html")
 
-
+@login_required
 def busqueda(request):
 
     nombreprod= request.GET["nombreprod"]
@@ -87,18 +95,21 @@ def busqueda(request):
 
 
 
-
+@login_required
 def leerclientes (request):
     clientes=Cliente.objects.all()
     return render (request, "clientemod.html", {"clientes": clientes})
 
+
+
+@login_required
 def eliminarclientes (request, id): 
     cliente=Cliente.objects.get(id=id)
     cliente.delete()
     clientes=Cliente.objects.all()
     return render (request, "cliente.html", {"clientes": clientes , "mensaje": "Usted ha seleccionado la opción  de ELIMINAR. Su elección fue ejecutada con éxito"})
 
-
+@login_required
 def editarcliente(request, id):
     cliente=Cliente.objects.get(id=id)
     if request.method== "POST":
@@ -116,3 +127,36 @@ def editarcliente(request, id):
         formulario= ClienteForms(initial={"nombre": cliente.nombre , "correo": cliente.correo , "numerocel":cliente.numerocel})
         return render ( request, "editarcliente.html", {"form": formulario, "cliente": cliente })
 
+
+
+def registro (request): 
+    if request.method=="POST":
+        form= UserCreationForm (request.POST)
+        if form.is_valid():
+            username= form.cleaned_data.get("username")
+            form.save()
+            return render ( request, "inicio.html", {"mensaje": f"El usuario: {username} ha sido creado correctamente."})
+        else:
+            return render (request, "registro.html", {"form": form , "mensaje": "Error al crear el usuario. Por favor, intente de nuevo"})
+    else: 
+        form= RegistroUsuarioform() 
+        return render (request, "registro.html", {"form": form})
+    
+
+
+def loginusuario (request):
+    if request.method=="POST":
+        form= AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            info=form.cleaned_data
+            usu=info["username"]
+            clave=info["password"]
+            usuario=authenticate(username=usu, password=clave)
+            if usuario is not None:
+                login(request, usuario)
+                return render (request, "inicio.html", {"mensaje": f"El usuario: {usu} ha sido logueado correctamente."})
+            else:
+                return render (request, "login.html", {"form": form , "mensaje": "Error al loguearse. Usuario o contra incorrecta."})
+    else: 
+        form= AuthenticationForm() 
+        return render (request, "login.html", {"form": form})

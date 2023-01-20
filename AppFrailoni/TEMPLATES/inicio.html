@@ -9,7 +9,7 @@
 
     <u><b> <h5> {{ mensaje }} </h5> </b></u>
         
-    <h2 class="text-light mx-auto mt-4 mb-5"> El diseño no es solo lo que se ve y se siente, el diseño es como funciona.</h2>
+    <em><h2 class="text-light mx-auto mt-4 mb-5"> El diseño no es solo lo que se ve y se siente, el diseño es como funciona.</h2></em>
     <u><br> <h2 class="text-light mx-auto mt-6 mb-6"> Visita nuestras siguientes secciones: </h2> </br></u>
     
 {% endblock %}
@@ -17,15 +17,15 @@
 {% block contenido0 %}
     <ul class="navbar-nav ms-auto">                      
         <li class="nav-item"><a class="nav-link" href="#projects">Acerca de nosotros</a></li>
-        <li class="nav-item"><a class="nav-link" href="#signup">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="#signup">Registro</a></li>
     </ul>
 {% endblock %}
 
 {% block contenido%}
-<u><h5 class="text-light mb-4"> Responsabilidad con el medio ambiente: </h5></u>
+<em><u><h5 class="text-light mb-4"> Responsabilidad con el medio ambiente: </h5></u></em>
     <p class="text-light mb-3">
         
-       <h6> Utilizando una gama de maderas y chapas respetuosas con el medio ambiente, combinadas con herrajes y acabados de última generación. Federico trabaja en estrecha colaboración con sus clientes para crear muebles hechos a medida que sean tanto funcionales como estéticamente agradables... </h6> 
+    <em><h6> Utilizando una gama de maderas y chapas respetuosas con el medio ambiente, combinadas con herrajes y acabados de última generación. Federico trabaja en estrecha colaboración con sus clientes para crear muebles hechos a medida que sean tanto funcionales como estéticamente agradables... </h6> </em>
         
     </p>
 
@@ -44,7 +44,7 @@
             <div class="col-xl-4 col-lg-5">
                 <div class="featured-text text-center text-lg-left">
                     <h4 class="text-black-50">Frailoni Design</h4>
-                    <p class="text-black-50 mb-0">Somos una empresa familiar, dedicada a la elaboración de productos confeccionado con todo tipo de madera. Nuestro grupo esta conformado por Federico y Macarena, su dedicación y amor por el medio ambiente, asegura cálidad e innovación en sus productos. </p>
+                    <em><p class="text-black-50 mb-0">Somos una empresa familiar, dedicada a la elaboración de productos confeccionado con todo tipo de madera. Nuestro grupo esta conformado por Federico y Macarena, su dedicación y amor por el medio ambiente, asegura cálidad e innovación en sus productos. </p></em>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
                     <div class="d-flex h-100">
                         <div class="project-text w-100 my-auto text-center text-lg-left">
                             <h4 class="text-black-50">Calidad</h4>
-                            <p class="mb-0 text-black-50">Elaboración de productos únicos, producidos con dedicación y esfuerzo. La marca se caracteriza por asegurar responsabilidad ambiental y duración de los productos con los cuidados recomendados de nuestro equipo.</p>
+                            <em><p class="mb-0 text-black-50">Elaboración de productos únicos, producidos con dedicación y esfuerzo. La marca se caracteriza por asegurar responsabilidad ambiental y duración de los productos con los cuidados recomendados de nuestro equipo.</p></em>
                             <hr class="d-none d-lg-block mb-0 ms-0" />
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                         <div class="project-text w-100 my-auto text-center text-lg-right">
                             <h4 class="text-black-50">Innovación</h4>
                             <h6 class="mb-0 text-black-50">  </h6>                                
-                            <h12 class="mb-0 text-black-50"> Diseño de productos, fabricados de manera artesanal. La forma de trabajar depende del producto solicitado por nuestro cliente. Se trabaja con todo tipo de madera rústica. </h12>
+                            <em><p class="mb-0 text-black-50"> Diseño de productos, fabricados de manera artesanal. La forma de trabajar depende del producto solicitado por nuestro cliente. Se trabaja con todo tipo de madera rústica. </p></em>
                             <hr class="d-none d-lg-block mb-0 me-0" />
                         </div>
                     </div>
@@ -87,40 +87,9 @@
         <div class="row gx-4 gx-lg-5">
             <div class="col-md-10 col-lg-8 mx-auto text-center">
                 <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                <h2 class="text-white mb-5"> Suscribite para recibir las últimas novedades</h2>
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
-                <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN">
-                    <!-- Email address input-->
-                    <div class="row input-group-newsletter">
-                        <div class="col"><input class="form-control" id="emailAddress" type="email" placeholder="Escribe tu correo..." aria-label="Escribe tu correo..." data-sb-validations="required,email" /></div>
-                        <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">Enviar</button></div>
-                    </div>
-                    <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:required">Campo requerido...</div>
-                    <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:email">Correo invalido...</div>
-                    <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center mb-3 mt-2 text-white">
-                            <div class="fw-bolder">Formulario enviado correctamente... </div>
-                            To activate this form, sign up at
-                            <br />
-                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                        </div>
-                    </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
-                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2">Mensaje erroneo. Intente de nuevo...</div></div>
-                </form>
+                <h5 class="text-white mb-5"> ¡REGISTRATE EN NUESTRA PÁGINA!</h5>
+                <A HREF= '{% url "registro" %}' > ¡Haz click para crear tu propio usuario!  </A>
+                
             </div>
         </div>
     </div>
@@ -135,7 +104,7 @@
                         <i class="fas fa-map-marked-alt text-primary mb-2"></i>
                         <h4 class="text-uppercase m-0">Ubicación</h4>
                         <hr class="my-4 mx-auto" />
-                        <div class="small text-black-50">Tandil- Buenos Aires</div>
+                        <em><div class="small text-black-50">Tandil- Buenos Aires</div></em>
                     </div>
                 </div>
             </div>
@@ -145,7 +114,7 @@
                         <i class="fas fa-envelope text-primary mb-2"></i>
                         <h4 class="text-uppercase m-0">Correo</h4>
                         <hr class="my-4 mx-auto" />
-                        <div class="small text-black-50"><a href="#!">Frailonidesign@gmail.com</a></div>
+                        <em><div class="small text-black-50"><a href="#!">Frailonidesign@gmail.com</a></div></em>
                     </div>
                 </div>
             </div>
@@ -155,7 +124,7 @@
                         <i class="fas fa-mobile-alt text-primary mb-2"></i>
                         <h4 class="text-uppercase m-0">Teléfono</h4>
                         <hr class="my-4 mx-auto" />
-                        <div class="small text-black-50">+94 (2920) 487-8832</div>
+                        <em><div class="small text-black-50">+94 (2920) 487-8832</div></em>
                     </div>
                 </div>
             </div>
@@ -168,7 +137,7 @@
     </div>
 </section>
 <!-- Footer-->
-<footer class="footer bg-light small text-center text-black-50"><div class="container px-4 px-lg-5">FrailoniDesign &copy; Innovación since 1994</div></footer>
+<em><footer class="footer bg-light small text-center text-black-50"><div class="container px-4 px-lg-5">FrailoniDesign &copy; Innovación since 1994</div></footer></em>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->

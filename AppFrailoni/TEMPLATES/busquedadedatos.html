@@ -7,13 +7,14 @@
 {% block contenido00 %}
 
 
-<h2 class="mx-auto my-5 text-uppercase"> DESLIZA HACIA ABAJO PARA COMPLETAR EL CAMPO DE BUSQUEDA DE PRODUCTOS POR NOMBRE</h2>
+<u><h2 class="mx-auto my-5 text-uppercase"> BUSQUEDA DE PRODUCTOS SOLICITADOS:</h2></u>
+<h6 class="text-white-50 mx-auto mt-2 mb-5"> DESLIZA HACIA ABAJO PARA COMPLETAR EL CAMPO DE BUSQUEDA DE PRODUCTOS POR NOMBRE</h6>
 
-
+<u><br> <h2 class="text-light mx-auto mt-6 mb-6"> Vuelve a alguna de nuestras secciones: </h2> </br></u>
 {% endblock %}
 
 {% block contenido %}
-<h4 class="text-white-50 mx-auto mt-2 mb-5"> Complete el campo para buscar el producto que desea visualizar: </h4>
+<em></em><h5 class="text-white-50 mx-auto mt-2 mb-5"> COMPLETE EL CAMPO PARA BUSCAR EL PRODUCTO SOLICITADO: </h5></em>
 
 <form action= "{% url 'busqueda' %}" method="GET">
     <input type="text" name="nombreprod" id="nombreprod" placeholder="Nombre del producto:">

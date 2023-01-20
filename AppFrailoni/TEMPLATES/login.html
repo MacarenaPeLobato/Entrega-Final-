@@ -5,9 +5,12 @@
 
 
 <hr><strong> <h5> {{ mensaje }} </h5> </strong></hr>
+<u><h2 class="mx-auto my-5 text-uppercase"> ¡Bienvenidos!</h2></u>
+<h5 class="text-white-50 mx-auto mt-4 mb-5"> Por favor, ingresa tu usuario y contraseña para navegar por nuestra página </h5>
 
 
-<p><h2 class="text-white mt-6  mb-6"><form action="{% url 'editarcliente' cliente.id %}" method="POST"> {% csrf_token %} </h2>
+
+<p><h2 class="text-white mt-6  mb-6"><form action="{% url 'login' %}" method="POST"> {% csrf_token %} </h2>
 
                                     <table>
 
@@ -15,13 +18,12 @@
         
                                     </table>
 
-                                    <input type="submit" value="Guardar Datos">
+                                    <input type="submit" value="Ingresar">
 
                                     </form> 
-</p>
+</p></em>
                     
 <u><hr> <h2 class="text-light mx-auto mt-6 mb-6"> Visita nuestras siguientes secciones: </h2> </hr></u>
-
 
     
 {% endblock %}

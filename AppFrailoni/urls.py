@@ -1,5 +1,6 @@
 from django.urls import path
 from AppFrailoni.views import *
+from django.contrib.auth.views import LogoutView
 
 
 
@@ -13,6 +14,9 @@ urlpatterns = [
     path("leerclientes/", leerclientes, name= "leerclientes"),
     path("eliminarclientes/<id>", eliminarclientes, name= "eliminarclientes"),
     path("editarcliente/<id>", editarcliente, name= "editarcliente"),
+    path("registro/", registro, name= "registro"),
+    path("login/", loginusuario, name= "login"),
+    path("logout/", LogoutView.as_view(), name= "logout"),
     
     
 
