@@ -5,7 +5,7 @@ from AppFrailoni.forms import *
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin 
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 
@@ -97,8 +97,8 @@ def busqueda(request):
 
 @login_required
 def leerclientes (request):
-    clientes=Cliente.objects.all()
-    return render (request, "clientemod.html", {"clientes": clientes})
+    clientes=Cliente.objects.all()     
+    return render (request, "clientemod.html", {"clientes": clientes, "avatar": obtenerAvatar(request)})
 
 
 
@@ -160,3 +160,50 @@ def loginusuario (request):
     else: 
         form= AuthenticationForm() 
         return render (request, "login.html", {"form": form})
+    
+@login_required
+def editarperfil(request):
+    usuario=request.user
+    if request.method== "POST":
+        form=Perfileditado (request.POST)
+        if form.is_valid():
+            info= form.cleaned_data
+            usuario.username= info["username"]
+            usuario.email= info["email"]
+            usuario.password1= info["password1"]
+            usuario.password2= info["password2"]
+            usuario.save()
+            return render (request, "inicio.html", {"mensaje": f"Tu información ha sido modificada. Tu usuario ahora es: {usuario.username}"})
+        else:
+            return render (request, "editarperfil.html", {"form":form, "nombreusuario": usuario.username})
+    else:
+        form=Perfileditado(instance=usuario)
+        return render (request,"editarperfil.html", {"form":form, "nombreusuario": usuario.username})
+
+
+
+def obtenerAvatar(request):
+    lista=Avatar.objects.filter(user=request.user)
+    if len(lista)!=0:
+        avatar=lista[0].imagen.url
+    else:
+        avatar='/media/avatarpordefecto.png'
+    return avatar
+
+
+def agregarAvatar(request):
+    if request.method== "POST":
+        form=AvatarForm (request.POST, request.FILES)
+        if form.is_valid():
+            avatar= Avatar(user=request.user,imagen=request.FILES["imagen"])
+            avatarViejo=Avatar.objects.filter(user=request.user)
+            if len(avatarViejo)>0:
+                avatarViejo[0].delete()
+            avatar.save()
+            return render (request, "inicio.html", {"mensaje": "El avatar agregado correctamente."})
+        else:
+            return render (request, "agregarAvatar.html", {"form":form, "usuario": request.user, "mensaje": "Error al cargar el avatar. Intente de nuevo"})
+    else:
+        form=AvatarForm
+        return render (request,"agregarAvatar.html", {"form":form, "usuario": request.user})
+

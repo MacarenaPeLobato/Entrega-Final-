@@ -5,6 +5,16 @@
 
 <hr><strong> <h5> {{ mensaje }} </h5> </strong></hr>
 
+<style> 
+    .img{
+        width: 100px
+    }
+</style>
+
+<img src="{{avatar}}" class="img" alt="">
+<hr><h6> AVATAR DEL USUARIO </h6> </hr>
+
+<a href= '{% url "agregarAvatar" %}' > ¡Haz click aquí para modificar tu avatar!  </a>
 
 <ul>
 <body>
@@ -17,7 +27,6 @@
 </body>
 
 </ul>
-
 <u><br> <h2 class="text-light mx-auto mt-6 mb-6"> Visita nuestras siguientes secciones: </h2> </br></u>
 
 
