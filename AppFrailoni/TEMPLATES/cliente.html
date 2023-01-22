@@ -23,20 +23,20 @@
 <hr>   
 <em><h5> ¡Complete el formulario y nosotros nos encargamos de lo demás! </h5> 
 
-<ul>
-    <h2 class="text-white mb-4"> <form action="{% url 'cliente' %}" method="POST"> {% csrf_token %}</h2>
-
-                                    <table>
-
-                                        {{ form.as_table }}
-                                    
-                                    </table>
-
-                                    <input type="submit" value="Enviar "> </em>
-
-</ul>
+    <ul>
+        <h2 class="text-white mb-4"> <form action="{% url 'cliente' %}" method="POST"> {% csrf_token %}</h2>
+    
+                                        <table>
+    
+                                            {{ form.as_table }}
+                                        
+                                        </table>
+    
+                                        <input type="submit" value="Enviar "> </em>
+    
+    </ul>
 <hr> 
-<A HREF= '{% url "leerclientes" %}' > ¡Haz click para visualizar la lista de clientes que ha completado el formulario!  </A>
+<a href= '{% url "leerclientes" %}' > ¡Haz click para visualizar la lista de clientes que ha completado el formulario!  </a>
 
 
 

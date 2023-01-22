@@ -24,7 +24,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('AppFrailoni/', include ("AppFrailoni.urls")),   
+    path('AppFrailoni/', include ("AppFrailoni.urls")),
+    path('FrailoniMensajes/', include ("FrailoniMensajes.urls")),   
+      
                     
     
 ]
